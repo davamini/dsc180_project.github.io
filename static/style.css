@@ -32,3 +32,18 @@
     }
     .row.content {height:auto;} 
   }
+
+  @media screen and (min-width: 767px) {
+    div.left_col {
+      float: left;
+      width: 50%;
+    }
+  
+    div.right_col {
+      float: right;
+      width: 50%;
+    }
+  }
+#Top_misinfo_subreddits, #Top_misinfo_categories {
+    height: calc(20vh + 15vw);
+  }
