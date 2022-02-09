@@ -44,6 +44,6 @@
       width: 50%;
     }
   }
-#Top_misinfo_subreddits, #Top_misinfo_categories {
+#Top_misinfo_subreddits, #Top_misinfo_categories, #subreddits_upvote, #Top_misinfo_users {
     height: calc(20vh + 15vw);
   }
