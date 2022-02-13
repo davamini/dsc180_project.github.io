@@ -41,61 +41,189 @@
     <div class="container-fluid text-center">    
         <div class="row content">
         <div class="col-sm-2 sidenav">
+            <p><a href="index.html#target_intro">Introduction</a></p>
             <p><a href="index.html#target_research">Research Question</a></p>
-            <p><a href="index.html#target_background">Background & Prior Work</a></p>
             <p><a href="index.html#target_hypothesis">Hypothesis</a></p>
-            <p><a href="index.html#target_data">Data Wrangling</a></p>
+            <p><a href="index.html#target_methods">Methods</a></p>
             <p><a href="index.html#target_analysis">Analysis & Results</a></p>
-            <p><a href="index.html#target_ethics">Ethics & Privacy</a></p>
             <p><a href="index.html#target_conclusion">Conclusion & Discussion</a></p>
         </div>
         <div class="col-sm-8 text-left"> 
             <h1>Welcome</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>This is our Senior Capstone Project at UCSD. We are looking into 
+                the spread of misinformation on social media platforms.</p>
             <hr>
+
+            <h3 id="target_intro">Introduction</h3>
+                <p>
+                    Last quarter's project involved downloading twitter data 
+                    based on pre downloaded tweet IDs related to COVID-19. 
+                    We peeled back the layers of a misinformation network using 
+                    k-core analysis in addition to performing exploratory data
+                    analysis. While this project yielded interesting findings, 
+                    it seemed limited to COVID-19-related misinformation only, 
+                    and finding similar pre-categorized twitter data such as 
+                    this can be very difficult. As a result, we decided to 
+                    continue our investigation of misinformation in social media 
+                    on Reddit's platform.
+                </p>
+
+                <p>
+                    We decided to base this project off of Reddit data because 
+                    Reddit offers pre-categorized information by virtue of having
+                    many Subreddit communities, which are, generally, 
+                    communities leaning towards a specific topic.
+                </p>
+
+                <p>
+                    Similar projects such as ours have been done in the past. 
+                    For example, a paper title, "The Web Centipede: Understanding 
+                    How Web Communities Influence Each Other Through the Lens of 
+                    Mainstream and Alternative News Sources" , written by  
+                    Nicolas Kourtelris, Ilias Leontiadis, Michael Sirivianos, 
+                    Gianluca Stringhini, and Jeremy Blackburn, also looks into 
+                    the spread of misinformation on the Reddit Platform. The 
+                    paper compares the spread of mainstream and alternative news
+                    URLs on Reddit, Twitter, and 4chan, and it finds that 4chan 
+                    and six selected Subreddits have a very high percentage of 
+                    alternative news URLs compared to other communities.
+                </p>
+
+                <p>
+                    Our study will also involve identifying the frequency of 
+                    misinformation on selected Subreddits based off of the 
+                    presence of misinformation URLs. Our data will primarily 
+                    consist of Reddit submissions and their respective 
+                    attributes such as whether there is misinformation, 
+                    subreddit name, the author, upvotes, downvotes etc. This 
+                    will allow us to gauge the presence of misinformation on 
+                    Subreddits individually and analyze the relationships 
+                    between Subreddits based on their shared users.
+                </p>
+
+                <p>
+                    In order to identify URLs as misinformation or not, we will 
+                    use a third party list of misinformation domains made 
+                    publicly available by iffy.news.
+                </p>
+
             <h3 id="target_research">Research Question</h3>
                 <p>
-                    How does the spread of misinformation vary from subreddit to subreddit, and what is the relationship between these subreddits?
+                    How does the spread of misinformation vary from subreddit to
+                     subreddit, and what is the relationship between these 
+                     subreddits?
                 </p>
                 <ul>
-                    <li>What can user activity tell us about trends within subreddits and users who commonly post misinformation?</li> 
+                    <li>What can user activity tell us about trends within 
+                        subreddits and users who commonly post misinformation?
+                    </li> 
                 </ul>
-
-            <h3 id="target_background">Background & Prior Work</h3>
-                <p>
-                    Social media has grown in popularity and has massive implications for how people are exposed to information and the quality of the 
-                    information they interact with. Reddit is a pre-categorized form of social media, through the use of subreddits, and provides a way to analyze the quality of information given a certain category or topic.
-                </p>
-
-                <p>
-                    Our previous project analyzed misinformation networks on twitter using tweets related to COVID-19. However, this is just one topic, and maybe the frequency of misinformation varies from topic to topic. 
-                    For example, a subreddit that’s used for discussing Linux software is probably less likely to be spreading misinformation compared to a political subreddit.
-                </p>
 
             <h3 id="target_hypothesis">Hypothesis</h3>
                 <p>
-                    Subreddits leaning more towards sensitive topics, such as politics, news etc. are more likely to be spreading misinformation. In addition, these subreddits may share a lot of the same users. 
+                    Subreddits leaning more towards sensitive topics, such as 
+                    politics, news etc. are more likely to be spreading 
+                    misinformation. In addition, these subreddits may share a 
+                    lot of the same users. 
                 </p>
 
-            <h3 id="target_data">Data Wrangling</h3>
+            <h3 id="target_methods">Methods</h3>
+                
                 <p>
-                    We are trying to systematically create a way to identify sources of misinformation. Currently, if a user posts a misinfo url, the script will get the subreddits they comment the most on. 
-                    We then compared those subreddits to the other users who post misinfo too. After that, we can see which subreddits they have the most in common.
+                    System specifications used for our scripts:
                 </p>
+                <ul>
+                    <li>At least 2 gigabytes of RAM</li> 
+                    <li>Stable Internet</li>
+                </ul>
+
+                <p>
+                    First, data will be acquired using the Python Reddit API 
+                    Wrapper, PRAW, which provides access to public data made 
+                    available by Reddit and simply requires creating an account 
+                    and an associated application. Getting data in this case 
+                    involves two steps: Downloading the data and uploading the 
+                    data to Google Sheets.
+                </p>
+
+                <h4>Choosing the subreddits </h4>
+                    <p>
+                        We decided to choose subreddits in a way that provides 
+                        us with a holistic view of the spread of misinformation.
+                        We identified 5 different types of subreddits to analyze:
+                        Top 5 most popular, Highest raw growth in the last year, 
+                        Political, Covid related, and News. This way we have a 
+                        diverse group of subreddits to see where a 
+                        disproportionate amount of misinformation is compared to
+                        others.
+                    </p>
+
+                <h4>Downloading the data</h4>
+                    <p>
+                        In order to download the data, we simply download the 
+                        last 1000 submissions sorted by the upvote count per 
+                        Subreddit. We store the submission data as entries in 
+                        memory, and then upload it into a google sheet using 
+                        Python's gspread package.
+                    </p>
+
+                    <p>
+                        While the data is in memory, we analyze the URLs for 
+                        every submission. If there is a URL, it will be 
+                        identified as misinformation based on whether its domain
+                         name is in our list of misinformation domains. If the 
+                         URL is identified as misinformation, it will be flagged
+                          as so.
+                    </p>
+
+                <h4>Uploading the Data</h4>
+                    <p>
+                        Once the data is all saved in a dataframe, it’ll be 
+                        uploaded to a google sheet using the gspread package. 
+                        This is done as a bulk upload, so it is fast and 
+                        efficient.
+                    </p>
+
 
             <h3 id="target_analysis">Analysis & Results</h3>
-                <p>
-                    
-                </p>
-                
-            <h3 id="target_ethics">Ethics & Privacy</h3>
-                <p>
-                        
-                </p>
+                <h4>Exploratory Data Analysis</h4>
+                    <p>
+                        The question we wanted to address is “How does the 
+                        spread of misinformation vary from subreddit to 
+                        subreddit, and what is the relationship between these 
+                        subreddits?
+                    </p>
 
+                    <p>
+                        We first identified all of the posts with misinformation
+                        URLs and created a separate dataframe. Afterwards, we 
+                        created a bar chart that showed the count of 
+                        misinformation posts based on each individual 
+                        subreddit, giving us a good overview on the prevalence
+                        of misinformation in each community.
+                    </p>
+
+                    <p>
+                        Based on the misinformation submissions we have, we 
+                        identify the users and rank them based on how much 
+                        misinformation they individually post. This way, we can 
+                        identify the most prolific users in regards to the 
+                        spread of misinformation.
+                    </p>
+
+                    <p>
+                        Next, we find the subreddits these users are most active
+                        in. This is done by analyzing their comments.
+                    </p>
+
+                    <p>
+                        Finally, the subreddits that share the most users who 
+                        have posted high amounts of misinformation are shown 
+                        below.
+                    </p>
             <h3 id="target_conclusion">Conclusion & Discussion</h3>
                 <p>
-                        
+                    Soon to come! 
                 </p>
         </div>
         <div class="col-sm-2 sidenav">
