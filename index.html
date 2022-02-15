@@ -150,7 +150,7 @@
                     <p>
                         We decided to choose subreddits in a way that provides 
                         us with a holistic view of the spread of misinformation.
-                        We identified 5 different types of subreddits to analyze:
+                        We identified 5 primary different types of subreddits to analyze:
                         Top 5 most popular, Highest raw growth in the last year, 
                         Political, Covid related, and News. This way we have a 
                         diverse group of subreddits to see where a 
@@ -158,10 +158,16 @@
                         others.
                     </p>
 
+                    <p>
+                        In addition, there is a dynamic topic callled "Expanded MisInfo Network Subreddits",
+                        where we can programmatically add new subreddits based off of analysis of users who
+                        are known to post misinformation. So if a subreddit is seen as popular among the misinfo-posters
+                        we analyze, we can add that subreddit to our list for future analysis. 
+                    </p>
                 <h4>Downloading the data</h4>
                     <p>
                         In order to download the data, we simply download the 
-                        last 1000 submissions sorted by the upvote count per 
+                        last 800-1000 submissions sorted by the upvote count per 
                         Subreddit. We store the submission data as entries in 
                         memory, and then upload it into a google sheet using 
                         Python's gspread package.
@@ -219,7 +225,7 @@
                     <p>
                         Finally, the subreddits that share the most users who 
                         have posted high amounts of misinformation are shown 
-                        below.
+                        in our <a href="analysis.html">results page</a>.
                     </p>
             <h3 id="target_conclusion">Conclusion & Discussion</h3>
                 <p>

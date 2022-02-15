@@ -3,11 +3,13 @@ google.charts.setOnLoadCallback(drawTopSubreddits);
 google.charts.setOnLoadCallback(drawTopCategories);
 google.charts.setOnLoadCallback(drawSubredditsUpvote);
 google.charts.setOnLoadCallback(drawTopMisInfoUsers);
+google.charts.setOnLoadCallback(drawTopDomains);
 
 var query_one = "SELECT A, B";
 var query_two = "SELECT C, sum(D) group by C order by sum(D) label sum(D) 'MisInfo_Index'";
 var query_three = "Select E, F order by F asc";
 var query_four = "Select G, H";
+var query_five = "Select I, Sum(J) group by I order by Sum(J) asc";
 var data_url = "https://docs.google.com/spreadsheets/d/1rCaW8F4kw4oFRJ017xHSeoDo_8ICh5oAa6f0dibTPBA/edit?usp=sharing";
 
 
@@ -117,11 +119,39 @@ function drawTopMisInfoUsers() {
     wrap.draw();
 }
 
+function drawTopDomains() {
+
+    var wrap = new google.visualization.ChartWrapper({
+        "chartType":"BarChart",
+        "dataSourceUrl": data_url,
+        'containerId':'Top_misinfo_domains',
+        'query': query_five,
+        'options': {
+            title:'Top Misinformation Domains Detected (Across All Subreddits Analyzed)',
+            legend: { position: "top" },
+            allowHtml: true,  
+            hAxis: {
+                title: "# of Times Detected"
+            },
+            vAxis: {
+                title: 'Domain',
+                minValue: 0,
+            },
+            animation:{
+                startup: true,
+                duration: 300,
+                easing: 'out',
+            }}
+        });
+    wrap.draw();
+}
+
 function resize () {
     drawTopSubreddits()
     drawTopCategories()
     drawSubredditsUpvote()
     drawTopMisInfoUsers()
+    drawTopDomains()
 }
 
 window.onload = resize;
