@@ -1,21 +1,19 @@
 google.charts.load('current');
-google.charts.setOnLoadCallback(drawTopSubreddits);
+google.charts.setOnLoadCallback(drawTopSubredditsByUpvoteRatio);
 google.charts.setOnLoadCallback(drawTopCategories);
-google.charts.setOnLoadCallback(drawSubredditsUpvote);
 google.charts.setOnLoadCallback(drawTopMisInfoUsers);
 google.charts.setOnLoadCallback(drawTopDomains);
 
-var query_one = "SELECT A, B";
-var query_two = "SELECT C, sum(D) group by C order by sum(D) label sum(D) 'MisInfo_Index'";
-var query_three = "Select E, F order by F asc";
-var query_four = "Select G, H";
-var query_five = "Select I, Sum(J) group by I order by Sum(J) asc";
+var query_one = "SELECT A, B, C";
+var query_two = "SELECT D, sum(E) group by D order by sum(E) label sum(E) 'MisInfo_Index'";
+var query_four = "Select F, G";
+var query_five = "Select H, Sum(I) group by H order by Sum(I) asc";
 var data_url = "https://docs.google.com/spreadsheets/d/1rCaW8F4kw4oFRJ017xHSeoDo_8ICh5oAa6f0dibTPBA/edit?usp=sharing";
 
 
-function drawTopSubreddits() {
+function drawTopSubredditsByUpvoteRatio() {
     var wrap = new google.visualization.ChartWrapper({
-        "chartType":"BarChart",
+        "chartType":"BubbleChart",
         "dataSourceUrl": data_url,
         "containerId":"Top_misinfo_subreddits",
         "query": query_one,
@@ -24,11 +22,17 @@ function drawTopSubreddits() {
             legend: { position: "top" },
             allowHtml: true,  
             hAxis: {
-                title: "# of Misinformation Posts / Total Submissions Analyzed"
+                title: "# of Misinformation Posts / Total Submissions Analyzed",
+                maxValue: .4,
+                minValue: 0
             },
             vAxis: {
-                title: "Subreddits",
+                title: "Average Upvote Ratio",
                 minValue: 0,
+                maxValue: 1.5
+            },
+            sizeAxis: {
+                maxSize: 20
             },
             animation:{
                 startup: true,
@@ -55,32 +59,6 @@ function drawTopCategories() {
             },
             vAxis: {
                 title: 'Categories',
-                minValue: 0,
-            },
-            animation:{
-                startup: true,
-                duration: 300,
-                easing: 'out',
-            }}
-        });
-    wrap.draw();
-}
-
-function drawSubredditsUpvote() {
-    var wrap = new google.visualization.ChartWrapper({
-        "chartType":"BarChart",
-        "dataSourceUrl": data_url,
-        'containerId':'subreddits_upvote',
-        'query': query_three,
-        'options': {
-            title:'Top Subreddits (Upvote Ratio); All',
-            legend: { position: "top" },
-            allowHtml: true,  
-            hAxis: {
-                title: "Average Upvote Ratio"
-            },
-            vAxis: {
-                title: 'Subreddit',
                 minValue: 0,
             },
             animation:{
@@ -147,9 +125,8 @@ function drawTopDomains() {
 }
 
 function resize () {
-    drawTopSubreddits()
+    drawTopSubredditsByUpvoteRatio()
     drawTopCategories()
-    drawSubredditsUpvote()
     drawTopMisInfoUsers()
     drawTopDomains()
 }
