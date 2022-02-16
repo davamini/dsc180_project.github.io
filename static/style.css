@@ -50,7 +50,7 @@
     margin-right: 20vw;
   }
 #Top_misinfo_subreddits, #Top_misinfo_categories, #subreddits_upvote, #Top_misinfo_users, #Top_misinfo_domains {
-    height: calc(20vh + 15vw);
+    height: calc(20vh + 5vw);
   }
 
   object {
