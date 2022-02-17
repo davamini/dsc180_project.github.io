@@ -52,11 +52,12 @@
 #Top_misinfo_subreddits, #Top_misinfo_categories, #subreddits_upvote, #Top_misinfo_users, #Top_misinfo_domains {
     height: calc(20vh + 5vw);
   }
-
+#graph-output{
+  width: 43vw;
+  float: right;
+}
   object {
-    width: calc(55vw);
+    width: calc(54vw);
     height: calc(90vh);
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+    float: left;
   }
