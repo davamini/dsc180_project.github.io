@@ -1,6 +1,69 @@
-* {
-    font-family: 'Inter', sans-serif;
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
 }
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  text-emphasis-color: white;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+
+.bod {
+  background-color: #F4F2EE;
+}
+
+.head {
+  font-family: 'Vidaloka', serif;
+  color: #333333;
+}
+
+p, ul, a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+}
+
+.row {
+  display: flex;
+  height: 0%;
+}
+
+.analysis_head{
+  margin-left: 80px;
+  font-family: 'Vidaloka', serif;
+  color: #333333;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  flex: 100%;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-bottom: 16px;
+  padding-top: 16px;
+  height: 100%;
+}
+
 /* Remove the navbar's default margin-bottom and rounded borders */ 
 .navbar {
     margin-bottom: 0;
@@ -8,18 +71,21 @@
   }
   
   /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-  .row.content {height: 1800px}
+  .row.content {
+    height: 1900px
+    
+  }
   
   /* Set gray background color and 100% height */
   .sidenav {
     padding-top: 20px;
-    background-color: #f1f1f1;
+    background-color: #F4F2EE;
     height: 100%;
   }
   
   /* Set black background color, white text and some padding */
   footer {
-    background-color: #555;
+    background-color: #3D3533;
     color: white;
     padding: 15px;
   }
@@ -29,6 +95,7 @@
     .sidenav {
       height: auto;
       padding: 15px;
+      width: 300px;
     }
     .row.content {height:auto;} 
   }
@@ -48,16 +115,15 @@
     text-align: left;
     margin-left: 20vw;
     margin-right: 20vw;
+    font-family: 'Montserrat', sans-serif;
   }
 #Top_misinfo_subreddits, #Top_misinfo_categories, #subreddits_upvote, #Top_misinfo_users, #Top_misinfo_domains {
     height: calc(20vh + 5vw);
   }
-#graph-output{
-  width: 43vw;
-  float: right;
-}
+
   object {
-    width: calc(54vw);
+    /* width: calc(54vw);
+    height: calc(90vh); */
+    width: 100%;
     height: calc(90vh);
-    float: left;
-  }
+  } 

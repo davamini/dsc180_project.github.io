@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Paytone+One&display=swap" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Vidaloka' rel='stylesheet'>
     <link href="static/style.css" rel="stylesheet" />
     
     <title>DSC180 Project - Analysis</title>
@@ -20,7 +21,7 @@
     <script type="text/javascript" src='https://www.gstatic.com/charts/loader.js'></script>
 </head>
 
-<body>
+<body class="bod">  
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
         <div class="navbar-header">
@@ -35,11 +36,12 @@
             <ul class="nav navbar-nav">
             <li class="active"><a href="analysis.html">Project Results</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <!-- <li><a href="contact.html">Contact</a></li> -->
         </div>
         </div>
     </nav>
     <div class="middle_content">
+        <h1 class="head">Analysis</h1>
         <h4>Preliminary analysis can be found on a Jupyter Notebook at <a href="https://github.com/davamini/DSC180B_Reddit_MisInfo_Capstone/blob/main/notebooks/Analysis.ipynb"  target="_blank">Github</a>.</h4>
         <br>
         <h4>It's clear that the subreddits <i>r/Conservative</i> and <i>r/WayOfTheBern</i> have the highest amounts of misinformation submissions compared to the rest of the subreddits we analyzed.</h4>
@@ -48,19 +50,49 @@
         <h4>The figure at the bottom (# of MisInfo-Posters per Subreddit) shows the number of <b>known</b> users who post misinformation per Subreddit. This provides more insight into the relationships between Subreddits, 
             because a Subreddit can be seen as more of a central part of the misinformation "network" given the more misinfo-posters it has.</h4>
     </div><br>
-    <div class="left_col">
+    
+    <h1 class="analysis_head">Exploratory Data Analysis</h1>
+      <div class="row">
+        <div class="column">
             <div id="Top_misinfo_subreddits"></div>
+        </div>
+      </div>
+    
+      <div class="row">
+        <div class="column">
+            <div id="Top_misinfo_domains"></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="column">
             <div id="Top_misinfo_categories"></div>
-            <div id="subreddits_upvote"></div>
-    </div>
-    <div class="right_col">
-        <br>
-        <div id="Top_misinfo_domains"></div>
-        <div id="Top_misinfo_users"></div>
-    </div>
-    <object id="model-output" type="text/html" data="model_output.html"></object>
+        </div>
+      </div>
     
-    <object id="graph-output" type="text/html" data="subreddit_graph.html"></object>
+    <div class="row">
+        <div class="column">
+            <div id="Top_misinfo_users"></div>
+        </div>
+      </div>
+
+      <h1 class="analysis_head">Intertopic Distance Map</h1>
+      <div class="row">
+        <div class="column">
+            <object type="text/html" data="model_output.html"></object>
+        </div>
+      </div>
+
+      <h1 class="analysis_head">Topic Map</h1>
+      <div class="row">
+        <div class="column">
+            <object type="text/html" data="subreddit_graph.html"></object>
+        </div>
+      </div>
+      
     
+
+   
+
     <script src="static/scripts.js"></script>
 </body>

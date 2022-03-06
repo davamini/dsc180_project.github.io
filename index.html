@@ -8,6 +8,7 @@
         <title>DSC180 Project</title>
         <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Paytone+One&display=swap" rel="stylesheet" />
+        <link href='https://fonts.googleapis.com/css?family=Vidaloka' rel='stylesheet'>
         <link href="static/style.css" rel="stylesheet" />
         
         <title>DSC180 Project - Home</title>
@@ -18,7 +19,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <script type="text/javascript" src='https://www.gstatic.com/charts/loader.js'></script>
 </head>
-<body>  
+<body class="bod">  
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
         <div class="navbar-header">
@@ -33,7 +34,7 @@
             <ul class="nav navbar-nav">
             <li><a href="analysis.html"">Project Results</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <!-- <li><a href="contact.html">Contact</a></li> -->
         </div>
         </div>
     </nav>
@@ -41,20 +42,20 @@
     <div class="container-fluid text-center">    
         <div class="row content">
         <div class="col-sm-2 sidenav">
-            <p><a href="index.html#target_intro">Introduction</a></p>
+            <!-- <p><a href="index.html#target_intro">Introduction</a></p>
             <p><a href="index.html#target_research">Research Question</a></p>
             <p><a href="index.html#target_hypothesis">Hypothesis</a></p>
             <p><a href="index.html#target_methods">Methods</a></p>
             <p><a href="index.html#target_analysis">Analysis & Results</a></p>
-            <p><a href="index.html#target_conclusion">Conclusion & Discussion</a></p>
+            <p><a href="index.html#target_conclusion">Conclusion & Discussion</a></p> -->
         </div>
         <div class="col-sm-8 text-left"> 
-            <h1>Welcome</h1>
+            <h1 class="head">Welcome</h1>
             <p>This is our Senior Capstone Project at UCSD. We are looking into 
                 the spread of misinformation on social media platforms.</p>
             <hr>
 
-            <h3 id="target_intro">Introduction</h3>
+            <h3 id="target_intro" class="head">Introduction</h3>
                 <p>
                     Last quarter's project involved downloading twitter data 
                     based on pre downloaded tweet IDs related to COVID-19. 
@@ -107,7 +108,7 @@
                     publicly available by iffy.news.
                 </p>
 
-            <h3 id="target_research">Research Question</h3>
+            <h3 id="target_research" class="head">Research Question</h3>
                 <p>
                     How does the spread of misinformation vary from subreddit to
                      subreddit, and what is the relationship between these 
@@ -119,7 +120,7 @@
                     </li> 
                 </ul>
 
-            <h3 id="target_hypothesis">Hypothesis</h3>
+            <h3 id="target_hypothesis" class="head">Hypothesis</h3>
                 <p>
                     Subreddits leaning more towards sensitive topics, such as 
                     politics, news etc. are more likely to be spreading 
@@ -127,7 +128,7 @@
                     lot of the same users. 
                 </p>
 
-            <h3 id="target_methods">Methods</h3>
+            <h3 id="target_methods" class="head">Methods</h3>
                 
                 <p>
                     System specifications used for our scripts:
@@ -146,7 +147,7 @@
                     data to Google Sheets.
                 </p>
 
-                <h4>Choosing the subreddits </h4>
+                <h4 class="head">Choosing the subreddits </h4>
                     <p>
                         We decided to choose subreddits in a way that provides 
                         us with a holistic view of the spread of misinformation.
@@ -164,7 +165,7 @@
                         are known to post misinformation. So if a subreddit is seen as popular among the misinfo-posters
                         we analyze, we can add that subreddit to our list for future analysis. 
                     </p>
-                <h4>Downloading the data</h4>
+                <h4 class="head">Downloading the data</h4>
                     <p>
                         In order to download the data, we simply download the 
                         last 800-1000 submissions sorted by the upvote count per 
@@ -182,7 +183,7 @@
                           as so.
                     </p>
 
-                <h4>Uploading the Data</h4>
+                <h4 class="head">Uploading the Data</h4>
                     <p>
                         Once the data is all saved in a dataframe, it’ll be 
                         uploaded to a google sheet using the gspread package. 
@@ -191,8 +192,8 @@
                     </p>
 
 
-            <h3 id="target_analysis">Analysis & Results</h3>
-                <h4>Exploratory Data Analysis</h4>
+            <h3 id="target_analysis" class="head">Analysis & Results</h3>
+                <h4 class="head">Exploratory Data Analysis</h4>
                     <p>
                         The question we wanted to address is “How does the 
                         spread of misinformation vary from subreddit to 
@@ -227,10 +228,6 @@
                         have posted high amounts of misinformation are shown 
                         in our <a href="analysis.html">results page</a>.
                     </p>
-            <h3 id="target_conclusion">Conclusion & Discussion</h3>
-                <p>
-                    Soon to come! 
-                </p>
         </div>
         <div class="col-sm-2 sidenav">
             <!-- Filler Content -->
@@ -239,7 +236,7 @@
     </div>
     
     <footer class="container-fluid text-center">
-        <p>Footer Text</p>
+        <p>© 2022 by David Aminifard & Samuel Huang </p>
     </footer>
 </body>
 </html>
