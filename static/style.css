@@ -53,7 +53,6 @@ p, ul, a {
   color: #333333;
 }
 
-/* Create two equal columns that sits next to each other */
 .column {
   flex: 100%;
   padding-left: 80px;
@@ -63,33 +62,38 @@ p, ul, a {
   height: 100%;
 }
 
-/* Remove the navbar's default margin-bottom and rounded borders */ 
 .navbar {
     margin-bottom: 0;
     border-radius: 0;
   }
   
-  /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
   .row.content {
     height: 2200px
     
   }
   
-  /* Set gray background color and 100% height */
   .sidenav {
     padding-top: 20px;
     background-color: #F4F2EE;
     height: 100%;
   }
   
-  /* Set black background color, white text and some padding */
+  #main_div {
+    margin-bottom: calc(100vh - 100vw)
+  }
+
   footer {
     background-color: #3D3533;
     color: white;
-    padding: 15px;
+    margin-top: -0.5em;
+    padding: 2em;
+    position: fixed; 
+    left: 50%;
+    transform:translateX(-50%);
+    bottom: 0;
+    text-align: center;
   }
   
-  /* On small screens, set height to 'auto' for sidenav and grid */
   @media screen and (max-width: 767px) {
     .sidenav {
       height: auto;
