@@ -41,7 +41,7 @@ function drawTopSubredditsByUpvoteRatio() {
             },
             backgroundColor: "#F4F2EE"}
         });
-    
+    document.getElementById("Top_misinfo_subreddits").innerHTML = '<img src="assets/images/loading-buffering.gif" id="loading"></img>';
     wrap.draw();
 }
 
@@ -69,6 +69,7 @@ function drawTopCategories() {
             },
             backgroundColor: "#F4F2EE"}
         });
+    document.getElementById("Top_misinfo_categories").innerHTML = '<img src="assets/images/loading-buffering.gif" id="loading"></img>';
     wrap.draw();
 }
 
@@ -97,6 +98,7 @@ function drawTopMisInfoUsers() {
             },
             backgroundColor: "#F4F2EE"}
         });
+    document.getElementById("Top_misinfo_users").innerHTML = '<img src="assets/images/loading-buffering.gif" id="loading"></img>';
     wrap.draw();
 }
 
@@ -125,6 +127,8 @@ function drawTopDomains() {
             },
             backgroundColor: "#F4F2EE"}
         });
+
+    document.getElementById("Top_misinfo_domains").innerHTML = '<img src="assets/images/loading-buffering.gif" id="loading"></img>';
     wrap.draw();
 }
 
