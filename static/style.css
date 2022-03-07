@@ -79,7 +79,7 @@ p, ul, a {
   }
   
   #main_div {
-    margin-bottom: calc(100vh - 100vw)
+    margin-bottom: calc(200vh - 100vw)
   }
 
   footer {
