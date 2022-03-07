@@ -38,7 +38,8 @@ function drawTopSubredditsByUpvoteRatio() {
                 startup: true,
                 duration: 300,
                 easing: "out",
-            }}
+            },
+            backgroundColor: "#F4F2EE"}
         });
     
     wrap.draw();
@@ -65,7 +66,8 @@ function drawTopCategories() {
                 startup: true,
                 duration: 300,
                 easing: 'out',
-            }}
+            },
+            backgroundColor: "#F4F2EE"}
         });
     wrap.draw();
 }
@@ -92,7 +94,8 @@ function drawTopMisInfoUsers() {
                 startup: true,
                 duration: 300,
                 easing: 'out',
-            }}
+            },
+            backgroundColor: "#F4F2EE"}
         });
     wrap.draw();
 }
@@ -119,7 +122,8 @@ function drawTopDomains() {
                 startup: true,
                 duration: 300,
                 easing: 'out',
-            }}
+            },
+            backgroundColor: "#F4F2EE"}
         });
     wrap.draw();
 }

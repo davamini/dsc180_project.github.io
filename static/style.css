@@ -123,6 +123,7 @@ p, ul, a {
   object {
     /* width: calc(54vw);
     height: calc(90vh); */
-    width: 100%;
+    width: 60%;
     height: calc(90vh);
-  } 
+    margin-left: 20%;
+  }
